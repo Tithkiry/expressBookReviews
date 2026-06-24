@@ -1,0 +1,3 @@
+theia@theia-u2024278nguo:
+/home/project$ curl https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/title/Fairy%20Tales
+[{"author":"Hans Christian Andersen","title":"Fairy tales","reviews":{}}]
