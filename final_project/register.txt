@@ -3,10 +3,3 @@ $ curl -X POST https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-eas
      -H "Content-Type: application/json" \
      -d '{"username": "Uchiha Madara", "password": "password"}'
 {"message":"User successfully created."}
-
-
-theia@theia-u2024278nguo:/home/project/expressBookReviews/final_project
-$ curl -X POST https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/register \
-     -H "Content-Type: application/json" \
-     -d '{"username": "Minato Namikaze", "password": "Flying Thor"}'
-{"message":"User successfully created."}

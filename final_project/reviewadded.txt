@@ -1,14 +1,6 @@
-theia@theia-u2024278nguo:/home/project/expressBo
-okReviews/final_project$ curl -i -X PUT https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/auth/review/1 \
+theia@theia-u2024278nguo:/home/project/expressBookReviews/final_project
+$ curl -X PUT https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/auth/review/1 \
 -H "Content-Type: application/json" \
--d '{"review":"This book is very good for light reading."}' \
+-d '{"reviews":"This book is very good for light reading."}' \
 -b cookies.txt
-HTTP/2 200 
-date: Thu, 25 Jun 2026 02:10:48 GMT
-content-type: application/json; charset=utf-8
-content-length: 106
-x-powered-by: Express
-etag: W/"6a-XlvcW2VAyWrwbfLhMfHFgjBIyKE"
-strict-transport-security: max-age=31536000; includeSubDomains
-
 {"message":"Review added/updated","reviews":{"Uchiha Madara":"This book is very good for light reading."}}

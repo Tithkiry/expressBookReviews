@@ -1,13 +1,3 @@
-theia@theia-u2024278nguo:/home/project
-$ curl -X POST https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/login \
-     -H "Content-Type: application/json" \
-     -d '{"username": "Uchiha Madara", "password": "password"}' \
-     -c cookies.txt
-{"message":"User sucessfully logged in"}
-
-
-
-curl -X POST https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/login \
-     -H "Content-Type: application/json" \
-     -d '{"username": "Minato NamiKaze", "password": "Flying Thor"}' \
-     -c cookies1.txt
+theia@theia-u2024278nguo:
+/home/project$ curl https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/title/Fairy%20Tales
+[{"author":"Hans Christian Andersen","title":"Fairy tales","reviews":{}}]

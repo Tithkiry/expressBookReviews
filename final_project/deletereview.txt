@@ -1,0 +1,5 @@
+theia@theia-u2024278nguo:/home/project/expressBookReviews/final_project
+$ curl -X DELETE https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/auth/review/1 \
+-H "Content-Type: application/json" \
+-b cookies.txt
+{"message":"User Uchiha Madara has had their review deleted"}
