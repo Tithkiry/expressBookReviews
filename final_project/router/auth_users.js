@@ -35,25 +35,33 @@ regd_users.post("/login", (req,res) => {
     let accessToken = jwt.sign({data: uname}, "access", {expiresIn: 60*60});
     req.session.authorization = {accessToken, uname}
     return res.status(200).json({message: "User sucessfully logged in"});
-  } else return res.status(208).json({message: "Such user does not exist"});
+  } else return res.status(401).json({message: "Such user does not exist"});
 });
 
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
   //Write your code here
   const isbn = req.params.isbn;
-  const addedReview = req.body.review;
-  let book = books[isbn].reviews;
-
+  const reviews = req.body.reviews;
   const uname = req.session.authorization.uname;
-  books[isbn].reviews[uname] = addedReview;
-  
-//   return res.status(200).json({
-//       message: `Review of user ${uname} has been added/updated.`,
-//       reviews: book
-//   });
-    return res.send(addedReview)
+
+  books[isbn].reviews[uname] = reviews;
+
+  return res.status(200).json({
+      message: "Review added/updated",
+      reviews: books[isbn].reviews
+  });
 });
+
+// Delete book review
+regd_users.delete("auth/review/:isbn", (req, res) => {
+    const isbn = req.params.isbn;
+    let bookReviews = books[isbn].reviews;
+    // {"Uchiha Madara": "Good book"}
+    const uname = req.sesssion.authorization.uname;
+
+    book
+})
 
 module.exports.authenticated = regd_users;
 module.exports.isValid = isValid;
