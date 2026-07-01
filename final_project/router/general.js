@@ -22,10 +22,6 @@ public_users.post("/register", (req,res) => {
 public_users.get('/', async function (req, res) {
   //Write your code here
   try{
-    let fetchBook = () => {
-        return new Promise((resolve) => resolve(books))
-    }
-    const data = await fetchBook();
     return res.status(200).send(JSON.stringify(data, null, 4));
   } catch (error) {
     return res.status(403).json({message: "Cannot Fetch Book Data"});
@@ -39,10 +35,11 @@ public_users.get('/isbn/:isbn', async function (req, res) {
   try {
     const isbn = req.params.isbn;
     const book = books[isbn];
-    const fetchBook = () =>  new Promise((resolve) => resolve(book));
 
-    let data = await fetchBook();
-    return res.status(200).send(data);
+    if (!book) {
+      return res.status(404).json({ message: "Book with this ISBN not found" });
+    }
+    return res.status(200).json(book);
   } catch (error) {
     return res.status(403).json({message: "Cannot find this book"});
   }
@@ -57,9 +54,10 @@ public_users.get('/author/:author', async function (req, res) {
     let booksArray = Object.values(books);
     const book = booksArray.filter((b) => b.author.toLowerCase() === formattedAuthor);
     
-    const fetchBook = () =>  new Promise((resolve) => resolve(book));
-    let data = await fetchBook();
-    return res.status(200).send(data);
+    if (!book) {
+      return res.status(404).json({ message: "Book with this author not found" });
+    }
+    return res.status(200).json(book);
   } catch (error) {
     return res.status(403).json({message: "Cannot find this book"});
   }
@@ -68,13 +66,14 @@ public_users.get('/author/:author', async function (req, res) {
 // Get all books based on title
 public_users.get('/title/:title', async function (req, res) {
     try {
-        const title = req.params.title.toLowerCase();
-        let booksArray = Object.values(books);
-        const book = booksArray.filter((b)=> b.title.toLowerCase() === title)
+      const title = req.params.title.toLowerCase();
+      let booksArray = Object.values(books);
+      const book = booksArray.filter((b)=> b.title.toLowerCase() === title)
       
-        const fetchBook = () =>  new Promise((resolve) => resolve(book));
-        let data = await fetchBook();
-        return res.status(200).send(data);
+      if (!book) {
+        return res.status(404).json({ message: "Book with this title not found" });
+      }
+      return res.status(200).json(book);
     } catch (error) {
     return res.status(403).json({message: "Cannot find this book"});
   }

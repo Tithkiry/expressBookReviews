@@ -4,3 +4,10 @@ $ curl -X PUT https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east
 -d '{"reviews":"This book is very good for light reading."}' \
 -b cookies.txt
 {"message":"Review added/updated","reviews":{"Uchiha Madara":"This book is very good for light reading."}}
+
+theia@theia-u2024278nguo:/home/project/expressBookReviews/final_project
+$ curl -X PUT https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/customer/auth/review/1 \
+-H "Content-Type: application/json" \
+-d '{"reviews":"This book is very boring"}' \
+-b cookies.txt
+{"message":"Review added/updated","reviews":{"Uchiha Madara":"This book is very boring"}}
