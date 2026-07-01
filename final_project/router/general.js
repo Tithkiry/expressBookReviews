@@ -5,8 +5,7 @@ let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
 
-// Change this port if your Express app runs on another port
-const API_URL = "http://localhost:5000";
+const API_URL = "https://u2024278nguo-5000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai";
 
 // Internal API endpoint for Axios consumption
 public_users.get('/allbooks', (req, res) => {

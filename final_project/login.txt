@@ -2,4 +2,4 @@ theia@theia-u2024278nguo:/home/project/expressBookReviews/final_project$ curl -X
      -H "Content-Type: application/json" \
      -d '{"username": "Uchiha Madara", "password": "password"}' \
      -c cookies.txt
-{"message":"User sucessfully logged in"}
+{"message":"User Uchiha Madara sucessfully logged in"}
